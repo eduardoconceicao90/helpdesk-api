@@ -29,6 +29,7 @@ public class ClienteDTO implements Serializable {
 	
 	@NotNull(message = "O campo SENHA é requerido!")
 	protected String senha;
+	
 	protected Set<Integer> perfis = new HashSet<>();
 
 	@JsonFormat(pattern = "dd/MM/yyyy")
