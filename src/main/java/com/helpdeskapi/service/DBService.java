@@ -33,14 +33,14 @@ public class DBService {
 
 	public void instanciaDB() {
 		
-		Tecnico tecnico1 = new Tecnico(null, "Eduardo Conceição", "591.212.220-45", "eduardo@mail.com", encoder.encode("123"));
+		Tecnico tecnico1 = new Tecnico(null, "Eduardo Conceição", "59121222045", "eduardo@mail.com", encoder.encode("123"));
 		tecnico1.addPerfil(Perfil.ADMIN);
 		
-		Tecnico tecnico2 = new Tecnico(null, "Ronaldo Bulhões", "177.504.790-31", "ronaldo@mail.com", encoder.encode("123"));
+		Tecnico tecnico2 = new Tecnico(null, "Ronaldo Bulhões", "17750479031", "ronaldo@mail.com", encoder.encode("123"));
 		tecnico1.addPerfil(Perfil.TECNICO);
 		
-		Cliente cliente1 = new Cliente(null, "Telma Souza", "794.659.920-03", "telma@mail.com", encoder.encode("123"));
-		Cliente cliente2 = new Cliente(null, "Gabriel Souza", "844.493.930-74", "gabriel@mail.com", encoder.encode("123"));
+		Cliente cliente1 = new Cliente(null, "Telma Souza", "79465992003", "telma@mail.com", encoder.encode("123"));
+		Cliente cliente2 = new Cliente(null, "Gabriel Souza", "84449393074", "gabriel@mail.com", encoder.encode("123"));
 				
 		Chamado chamado1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "Trocar fonte do notebook", tecnico1, cliente1);
 		Chamado chamado2 = new Chamado(null, Prioridade.BAIXA, Status.ABERTO, "Chamado 02", "Leitor com problema", tecnico1, cliente2);

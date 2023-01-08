@@ -1,6 +1,7 @@
 package com.helpdeskapi.resource.exception;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,14 @@ public class ResourceExceptionHandler {
 				"Data Integraty Violation Exception", e.getMessage(), request.getRequestURI());
 		
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+	}
+	
+	@ExceptionHandler(ConstraintViolationException.class)
+	public ResponseEntity<StandardError> constraintViolationException(ConstraintViolationException e, HttpServletRequest request){
+		StandardError error = new StandardError(System.currentTimeMillis(), HttpStatus.FORBIDDEN.value(), 
+				"Constraint Violation Exception", "CPF inválido", request.getRequestURI());
+		
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
