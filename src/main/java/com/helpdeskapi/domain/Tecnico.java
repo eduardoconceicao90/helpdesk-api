@@ -22,11 +22,13 @@ public class Tecnico extends Pessoa {
 
 	public Tecnico() {
 		super();
+		addPerfil(Perfil.TECNICO);
 		addPerfil(Perfil.CLIENTE);
 	}
 
 	public Tecnico(Long id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
+		addPerfil(Perfil.TECNICO);
 		addPerfil(Perfil.CLIENTE);
 	}
 	
